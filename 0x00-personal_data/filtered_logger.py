@@ -53,7 +53,10 @@ def get_db() -> mysql.connector.connection.MySQLConnection:
             database=db_name,
         )
         if connection.is_connected():
+            print("Connection successful")
             return connection
+        else:
+            print("Connection failed")
     except Error as e:
         print(f"Error connecting to MySQL Database: {e}")
         return None
